@@ -104,6 +104,33 @@ F H <BR>
 
 <hr>
 
+## Output
+<img width="636" height="253" alt="image" src="https://github.com/user-attachments/assets/51e4477c-3191-474b-b29c-f972c77154cb" />
+
+## Programe
+```
+
+n = 5
+edges = [(0, 1), (0, 2), (0, 3), (2, 3), (2, 4)]
+
+graph = {str(i): [] for i in range(n)}
+
+print(n, n)
+for u, v in edges:
+    print(u, v)
+    graph[str(u)].append(str(v))
+
+visited = set()
+
+def dfs(node):
+    if node not in visited:
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(neighbour)
+
+dfs('0')
+print(list(graph.keys()))
+```
 <hr>
 <h3>Sample Input</h3>
 <hr>
@@ -117,6 +144,9 @@ F H <BR>
 <h3>Sample Output</h3>
 <hr>
 ['0', '1', '2', '3', '4']
+
+## Output
+<img width="553" height="182" alt="image" src="https://github.com/user-attachments/assets/8bfda7a4-9c81-4c42-9e5b-75b025082033" />
 
 <hr>
 <h3>Result:</h3>
